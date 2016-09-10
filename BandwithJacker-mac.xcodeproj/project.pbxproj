@@ -15,6 +15,7 @@
 		BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */; };
 		BE300BDA1D83CDDD004275A9 /* BWJDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */; };
 		BE300BE11D83D945004275A9 /* MCSession+SessionIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */; };
+		BE5B73EF1D83EDE800B10BDE /* BWJHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5B73EE1D83EDE800B10BDE /* BWJHTTPSessionManager.m */; };
 		CA9CCB198163C80FD3B690A1 /* libPods-BandwithJacker-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0B87B284AE2A9365D2BE3A /* libPods-BandwithJacker-mac.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJDownloadRequest.m; sourceTree = "<group>"; };
 		BE300BDF1D83D945004275A9 /* MCSession+SessionIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCSession+SessionIdentifier.h"; sourceTree = "<group>"; };
 		BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCSession+SessionIdentifier.m"; sourceTree = "<group>"; };
+		BE5B73ED1D83EDE800B10BDE /* BWJHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJHTTPSessionManager.h; sourceTree = "<group>"; };
+		BE5B73EE1D83EDE800B10BDE /* BWJHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJHTTPSessionManager.m; sourceTree = "<group>"; };
 		F08F4AC5A3DEF18CABD7CFCC /* Pods-BandwithJacker-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandwithJacker-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandwithJacker-mac/Pods-BandwithJacker-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +117,8 @@
 		BE300BD71D83B2F8004275A9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BE5B73ED1D83EDE800B10BDE /* BWJHTTPSessionManager.h */,
+				BE5B73EE1D83EDE800B10BDE /* BWJHTTPSessionManager.m */,
 				BE300BD41D83A8C0004275A9 /* BWJMultipeerConnectivityController.h */,
 				BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */,
 			);
@@ -258,6 +263,7 @@
 				BE300BC81D83A721004275A9 /* ViewController.m in Sources */,
 				BE300BC51D83A721004275A9 /* main.m in Sources */,
 				BE300BDA1D83CDDD004275A9 /* BWJDownloadRequest.m in Sources */,
+				BE5B73EF1D83EDE800B10BDE /* BWJHTTPSessionManager.m in Sources */,
 				BE300BC21D83A721004275A9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
