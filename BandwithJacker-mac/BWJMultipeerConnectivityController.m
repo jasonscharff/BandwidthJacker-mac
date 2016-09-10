@@ -63,7 +63,6 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
         self.masterSession.delegate = self;
         self.serviceBrowser = [[MCNearbyServiceBrowser alloc]initWithPeer:self.peerID
                                                               serviceType:kBWJMultipeerConnectivityServiceType];
-        self.serviceBrowser.delegate = self;
         
     }
     return self;
@@ -79,7 +78,6 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
 - (void)browser:(MCNearbyServiceBrowser *)browser
       foundPeer:(MCPeerID *)peerID
 withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
-    
     
 }
 
