@@ -10,4 +10,8 @@
 
 @interface BWJHTTPSessionManager : AFHTTPSessionManager
 
++ (instancetype)sharedManager;
+- (void)downloadItemAtURL : (NSURL * )url
+           numberOfDevices: (int)numberOfDevices;
+
 @end

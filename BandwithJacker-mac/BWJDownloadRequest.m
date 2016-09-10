@@ -19,7 +19,11 @@
 }
 
 - (void)setupWithDictionary : (NSDictionary *)dictionary {
-    
+    self.serverID = dictionary[@"_id"];
+    self.filename = dictionary[@"filename"];
+    self.requestURL = [NSURL URLWithString:dictionary[@"url"]];
+    NSArray *byteRangesArray = dictionary[@"ranges"];
+    self.byteRanges = byteRangesArray;
 }
 
 @end

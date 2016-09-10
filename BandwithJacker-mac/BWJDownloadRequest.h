@@ -10,8 +10,11 @@
 
 @interface BWJDownloadRequest : NSObject
 
+- (instancetype)initWithDictionary : (NSDictionary *)dictionary;
+
 @property (nonatomic) NSString *serverID;
 @property (nonatomic) NSString *filename;
 @property (nonatomic) NSURL *requestURL;
+@property (nonatomic) NSArray *byteRanges;
 
 @end

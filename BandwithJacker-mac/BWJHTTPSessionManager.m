@@ -8,6 +8,8 @@
 
 #import "BWJHTTPSessionManager.h"
 
+#import "BWJDownloadRequest.h"
+
 @implementation BWJHTTPSessionManager
 
 + (instancetype)sharedManager {
@@ -21,7 +23,7 @@
 }
 
 - (instancetype)init {
-    NSURL *url = [NSURL URLWithString:@"http://10.251.91.132:5000/"];
+    NSURL *url = [NSURL URLWithString:@"http://bandwith.andrewaday.me/"];
     self = [super initWithBaseURL:url];
     if(self) {
         AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
@@ -30,6 +32,21 @@
         [self setRequestSerializer:serializer];
     }
     return self;
+}
+
+//URL should be validated before this.
+- (void)downloadItemAtURL : (NSURL * )url
+           numberOfDevices: (int)numberOfDevices {
+    
+    NSString *path = [NSString stringWithFormat:@"partition/%@/%i", url.absoluteString, numberOfDevices];
+    
+    [self GET:path parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        BWJDownloadRequest *request = [[BWJDownloadRequest alloc]initWithDictionary:responseObject];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
 }
 
 @end

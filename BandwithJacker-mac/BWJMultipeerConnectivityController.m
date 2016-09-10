@@ -11,6 +11,7 @@
 #import "MCSession+SessionIdentifier.h"
 
 #import "BWJDownloadRequest.h"
+#import "BWJHTTPSessionManager.h"
 
 @import MultipeerConnectivity;
 
@@ -24,6 +25,8 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
 @property (nonatomic) NSMutableDictionary <NSString *, NSMutableDictionary<MCPeerID *, NSURL *>*>*peerFiles;
 @property (nonatomic) NSData *endSignal;
 @property (nonatomic) NSMutableDictionary<NSString *, NSNumber *>*numberOfPeersFinished;
+@property (nonatomic) NSMutableDictionary <NSString *, BWJDownloadRequest *>*downloadRequests;
+@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray <MCPeerID*> *>*addedPeers;
 @property (nonatomic) NSMutableSet *peers;
 
 
@@ -43,6 +46,15 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
 - (instancetype)init {
     self = [super init];
     if(self) {
+        //Init all data structures first.
+        self.peerFiles = [NSMutableDictionary dictionary];
+        self.numberOfPeersFinished = [NSMutableDictionary dictionary];
+        self.downloadRequests = [NSMutableDictionary dictionary];
+        self.addedPeers = [NSMutableDictionary dictionary];
+        self.peers = [NSMutableSet set];
+        
+        //Start the master session.
+        
         NSString *computerName = [[NSHost currentHost] localizedName];
         self.peerID = [[MCPeerID alloc]initWithDisplayName:computerName];
         self.masterSession = [[MCSession alloc]initWithPeer:self.peerID
@@ -52,6 +64,7 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
         self.serviceBrowser = [[MCNearbyServiceBrowser alloc]initWithPeer:self.peerID
                                                               serviceType:kBWJMultipeerConnectivityServiceType];
         self.serviceBrowser.delegate = self;
+        
     }
     return self;
 }
@@ -71,13 +84,44 @@ withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
 }
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state {
-    if(state == MCSessionStateConnected) {
-        [self.peers addObject:peerID];
-    } else if (state == MCSessionStateNotConnected) {
-        //This is a problem if we are in the middle of downloading.
-        //Show some sort of error later.
-        if([self.peers containsObject:peerID]) {
-            [self.peers removeObject:peerID];
+    //Manage a central expected peer list through the master session.
+    //This allows us to know how many peers we expect.
+    if(session == self.masterSession) {
+        if(state == MCSessionStateConnected) {
+            [self.peers addObject:peerID];
+        } else if (state == MCSessionStateNotConnected) {
+            //This is a problem if we are in the middle of downloading.
+            //Show some sort of error later.
+            if([self.peers containsObject:peerID]) {
+                [self.peers removeObject:peerID];
+            }
+        }
+    } else {
+        if(state == MCSessionStateConnected) {
+            NSMutableArray *addedPeers = self.addedPeers[session.sessionID];
+            if(!addedPeers) {
+                addedPeers = [[NSMutableArray alloc]initWithCapacity:self.peers.count];
+            }
+            if(![addedPeers containsObject:peerID]) {
+                [addedPeers addObject:peerID];
+                self.addedPeers[session.sessionID] = addedPeers;
+                BWJDownloadRequest *downloadRequest = self.downloadRequests[session.sessionID];
+                NSDictionary *json = @{@"url" : downloadRequest.requestURL.absoluteString,
+                                       @"bytes" : downloadRequest.byteRanges[addedPeers.count-1]};
+                NSError *error;
+                NSData *data = [NSJSONSerialization dataWithJSONObject:json options:0 error:&error];
+                if(error) {
+                    NSLog(@"error writing json = %@", error.localizedDescription);
+                } else {
+                    NSError *sendError;
+                    [session sendData:data toPeers:@[peerID] withMode:MCSessionSendDataReliable error:&sendError];
+                    if(sendError) {
+                        NSLog(@"error sending config = %@", sendError);
+                    }
+                }
+            }
+        } else {
+            NSLog(@"well fuck");
         }
     }
 }
@@ -187,6 +231,12 @@ withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
     dispatch_async(dispatch_get_main_queue(), ^{
         [browserViewController.presentingViewController dismissViewController:browserViewController];
     });
+    
+    //For now I'll hard code this ish.
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.google.co.uk/logos/olympics08_opening.gif"];
+    
+    [[BWJHTTPSessionManager sharedManager]downloadItemAtURL:url numberOfDevices:(int)self.peers.count];
 }
 
 - (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController {
