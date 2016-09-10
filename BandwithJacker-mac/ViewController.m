@@ -8,10 +8,16 @@
 
 #import "ViewController.h"
 
+#import "BWJMultipeerConnectivityController.h"
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //For now let's just show the browser vc.
+    
+    NSViewController *vc = [[BWJMultipeerConnectivityController sharedMultipeerConnectivityController]browserViewController];
+    [self presentViewControllerAsModalWindow:vc];
 
     // Do any additional setup after loading the view.
 }

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@import AppKit;
+
 @class MCBrowserViewController;
 
 @interface BWJMultipeerConnectivityController : NSObject
 
 + (instancetype)sharedMultipeerConnectivityController;
-- (MCBrowserViewController *)browserViewController;
+- (NSViewController *)browserViewController;
 
 @end

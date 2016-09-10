@@ -12,7 +12,7 @@
 
 static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service";
 
-@interface BWJMultipeerConnectivityController()
+@interface BWJMultipeerConnectivityController() <MCNearbyServiceBrowserDelegate>
 
 @property (nonatomic) MCNearbyServiceBrowser *serviceBrowser;
 @property (nonatomic) MCPeerID *peerID;
@@ -41,6 +41,7 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
                                  encryptionPreference:MCEncryptionNone];
         self.serviceBrowser = [[MCNearbyServiceBrowser alloc]initWithPeer:self.peerID
                                                               serviceType:kBWJMultipeerConnectivityServiceType];
+        self.serviceBrowser.delegate = self;
     }
     return self;
 }
@@ -51,5 +52,12 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
     return browserVC;
 }
 
+- (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
+    //Save the peer id.
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID {
+    //ignore for now.
+}
 
 @end
