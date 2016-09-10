@@ -15,9 +15,12 @@
 		BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */; };
 		BE300BDA1D83CDDD004275A9 /* BWJDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */; };
 		BE300BE11D83D945004275A9 /* MCSession+SessionIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */; };
+		CA9CCB198163C80FD3B690A1 /* libPods-BandwithJacker-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0B87B284AE2A9365D2BE3A /* libPods-BandwithJacker-mac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E0E158EC6F34E14B5AB0DB0 /* Pods-BandwithJacker-mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandwithJacker-mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-BandwithJacker-mac/Pods-BandwithJacker-mac.release.xcconfig"; sourceTree = "<group>"; };
+		AC0B87B284AE2A9365D2BE3A /* libPods-BandwithJacker-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BandwithJacker-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE300BBD1D83A721004275A9 /* BandwithJacker-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BandwithJacker-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE300BC01D83A721004275A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE300BC11D83A721004275A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJDownloadRequest.m; sourceTree = "<group>"; };
 		BE300BDF1D83D945004275A9 /* MCSession+SessionIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCSession+SessionIdentifier.h"; sourceTree = "<group>"; };
 		BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCSession+SessionIdentifier.m"; sourceTree = "<group>"; };
+		F08F4AC5A3DEF18CABD7CFCC /* Pods-BandwithJacker-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BandwithJacker-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BandwithJacker-mac/Pods-BandwithJacker-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,17 +44,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9CCB198163C80FD3B690A1 /* libPods-BandwithJacker-mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121970DF70250D6C42B08F7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F08F4AC5A3DEF18CABD7CFCC /* Pods-BandwithJacker-mac.debug.xcconfig */,
+				8E0E158EC6F34E14B5AB0DB0 /* Pods-BandwithJacker-mac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAA47A5952C2B9C33F8BD256 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC0B87B284AE2A9365D2BE3A /* libPods-BandwithJacker-mac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE300BB41D83A721004275A9 = {
 			isa = PBXGroup;
 			children = (
 				BE300BBF1D83A721004275A9 /* BandwithJacker-mac */,
 				BE300BBE1D83A721004275A9 /* Products */,
+				121970DF70250D6C42B08F7B /* Pods */,
+				AAA47A5952C2B9C33F8BD256 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE300BD11D83A722004275A9 /* Build configuration list for PBXNativeTarget "BandwithJacker-mac" */;
 			buildPhases = (
+				A0A36406CCF74955BFF3C49C /* [CP] Check Pods Manifest.lock */,
 				BE300BB91D83A721004275A9 /* Sources */,
 				BE300BBA1D83A721004275A9 /* Frameworks */,
 				BE300BBB1D83A721004275A9 /* Resources */,
+				B5B1FC2507A8327D4B87EEF7 /* [CP] Embed Pods Frameworks */,
+				29900673C177C92BF8E1306D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29900673C177C92BF8E1306D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BandwithJacker-mac/Pods-BandwithJacker-mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0A36406CCF74955BFF3C49C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B1FC2507A8327D4B87EEF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BandwithJacker-mac/Pods-BandwithJacker-mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE300BB91D83A721004275A9 /* Sources */ = {
@@ -290,6 +365,7 @@
 		};
 		BE300BD21D83A722004275A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F08F4AC5A3DEF18CABD7CFCC /* Pods-BandwithJacker-mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -303,6 +379,7 @@
 		};
 		BE300BD31D83A722004275A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E0E158EC6F34E14B5AB0DB0 /* Pods-BandwithJacker-mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -333,6 +410,7 @@
 				BE300BD31D83A722004275A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
