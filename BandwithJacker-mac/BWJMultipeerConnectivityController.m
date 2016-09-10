@@ -206,7 +206,33 @@ withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
 
 
 - (void)mergeFilesForSession : (MCSession *)session {
-    //TODO
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSArray *peers = self.addedPeers[session.sessionID];
+        BWJDownloadRequest *downloadRequest = self.downloadRequests[session.sessionID];
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *directory = [documentsDirectory stringByAppendingPathComponent:session.sessionID];
+        
+        NSString *savePath = [directory stringByAppendingPathComponent:downloadRequest.filename];
+        
+        int index = 0;
+        for (MCPeerID *peerID in peers) {
+            NSString *directoryForPeer = [directory stringByAppendingPathComponent:peerID.displayName];
+            if(index == 0) {
+                NSData *data = [NSData dataWithContentsOfFile:directoryForPeer];
+                [data writeToFile:savePath atomically:YES];
+            } else {
+                NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:savePath];
+                [fileHandle seekToEndOfFile];
+                //First we need to make sure this is coming in order.
+                [fileHandle writeData:[NSData dataWithContentsOfFile:directoryForPeer]];
+                [fileHandle closeFile];
+            }
+            index++;
+        }
+    });
+
 }
 
 - (void)addDownloadRequestOperation:(BWJDownloadRequest *)download {
