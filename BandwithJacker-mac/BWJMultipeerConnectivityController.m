@@ -16,7 +16,7 @@
 
 static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service";
 
-@interface BWJMultipeerConnectivityController() <MCNearbyServiceBrowserDelegate, MCSessionDelegate>
+@interface BWJMultipeerConnectivityController() <MCNearbyServiceBrowserDelegate, MCSessionDelegate, MCBrowserViewControllerDelegate>
 
 @property (nonatomic) MCNearbyServiceBrowser *serviceBrowser;
 @property (nonatomic) MCPeerID *peerID;
@@ -59,6 +59,7 @@ static NSString * const kBWJMultipeerConnectivityServiceType = @"bwj-mpc-service
 -(MCBrowserViewController *)browserViewController {
     MCBrowserViewController *browserVC = [[MCBrowserViewController alloc]initWithBrowser:self.serviceBrowser
                                                                                  session:self.masterSession];
+    browserVC.delegate = self;
     return browserVC;
 }
 
@@ -178,6 +179,20 @@ withDiscoveryInfo:(NSDictionary<NSString *,NSString *> *)info {
         _endSignal = [endSignalString dataUsingEncoding:NSUTF8StringEncoding];
     }
     return _endSignal;
+}
+
+#pragma mark MCBrowserDelegate
+
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [browserViewController.presentingViewController dismissViewController:browserViewController];
+    });
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [browserViewController.presentingViewController dismissViewController:browserViewController];
+    });
 }
 
 @end
