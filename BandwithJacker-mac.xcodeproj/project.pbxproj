@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE300BC21D83A721004275A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BC11D83A721004275A9 /* AppDelegate.m */; };
+		BE300BC51D83A721004275A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BC41D83A721004275A9 /* main.m */; };
+		BE300BC81D83A721004275A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BC71D83A721004275A9 /* ViewController.m */; };
+		BE300BCA1D83A721004275A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE300BC91D83A721004275A9 /* Assets.xcassets */; };
+		BE300BCD1D83A721004275A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE300BCB1D83A721004275A9 /* Main.storyboard */; };
+		BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BE300BBD1D83A721004275A9 /* BandwithJacker-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BandwithJacker-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE300BC01D83A721004275A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE300BC11D83A721004275A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE300BC41D83A721004275A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE300BC61D83A721004275A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE300BC71D83A721004275A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE300BC91D83A721004275A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE300BCC1D83A721004275A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE300BCE1D83A722004275A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE300BD41D83A8C0004275A9 /* BWJMultipeerConnectivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJMultipeerConnectivityController.h; sourceTree = "<group>"; };
+		BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJMultipeerConnectivityController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE300BBA1D83A721004275A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE300BB41D83A721004275A9 = {
+			isa = PBXGroup;
+			children = (
+				BE300BBF1D83A721004275A9 /* BandwithJacker-mac */,
+				BE300BBE1D83A721004275A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE300BBE1D83A721004275A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE300BBD1D83A721004275A9 /* BandwithJacker-mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE300BBF1D83A721004275A9 /* BandwithJacker-mac */ = {
+			isa = PBXGroup;
+			children = (
+				BE300BC01D83A721004275A9 /* AppDelegate.h */,
+				BE300BC11D83A721004275A9 /* AppDelegate.m */,
+				BE300BC61D83A721004275A9 /* ViewController.h */,
+				BE300BC71D83A721004275A9 /* ViewController.m */,
+				BE300BD71D83B2F8004275A9 /* Data */,
+				BE300BC91D83A721004275A9 /* Assets.xcassets */,
+				BE300BCB1D83A721004275A9 /* Main.storyboard */,
+				BE300BCE1D83A722004275A9 /* Info.plist */,
+				BE300BC31D83A721004275A9 /* Supporting Files */,
+			);
+			path = "BandwithJacker-mac";
+			sourceTree = "<group>";
+		};
+		BE300BC31D83A721004275A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE300BC41D83A721004275A9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE300BD71D83B2F8004275A9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BE300BD41D83A8C0004275A9 /* BWJMultipeerConnectivityController.h */,
+				BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE300BBC1D83A721004275A9 /* BandwithJacker-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE300BD11D83A722004275A9 /* Build configuration list for PBXNativeTarget "BandwithJacker-mac" */;
+			buildPhases = (
+				BE300BB91D83A721004275A9 /* Sources */,
+				BE300BBA1D83A721004275A9 /* Frameworks */,
+				BE300BBB1D83A721004275A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BandwithJacker-mac";
+			productName = "BandwithJacker-mac";
+			productReference = BE300BBD1D83A721004275A9 /* BandwithJacker-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE300BB51D83A721004275A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Jason Scharff";
+				TargetAttributes = {
+					BE300BBC1D83A721004275A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3R5J785EXT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BE300BB81D83A721004275A9 /* Build configuration list for PBXProject "BandwithJacker-mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE300BB41D83A721004275A9;
+			productRefGroup = BE300BBE1D83A721004275A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE300BBC1D83A721004275A9 /* BandwithJacker-mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE300BBB1D83A721004275A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE300BCA1D83A721004275A9 /* Assets.xcassets in Resources */,
+				BE300BCD1D83A721004275A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE300BB91D83A721004275A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */,
+				BE300BC81D83A721004275A9 /* ViewController.m in Sources */,
+				BE300BC51D83A721004275A9 /* main.m in Sources */,
+				BE300BC21D83A721004275A9 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BE300BCB1D83A721004275A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE300BCC1D83A721004275A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE300BCF1D83A722004275A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BE300BD01D83A722004275A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BE300BD21D83A722004275A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3R5J785EXT;
+				INFOPLIST_FILE = "BandwithJacker-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonscharff.BandwithJacker-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE300BD31D83A722004275A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3R5J785EXT;
+				INFOPLIST_FILE = "BandwithJacker-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonscharff.BandwithJacker-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE300BB81D83A721004275A9 /* Build configuration list for PBXProject "BandwithJacker-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE300BCF1D83A722004275A9 /* Debug */,
+				BE300BD01D83A722004275A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE300BD11D83A722004275A9 /* Build configuration list for PBXNativeTarget "BandwithJacker-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE300BD21D83A722004275A9 /* Debug */,
+				BE300BD31D83A722004275A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE300BB51D83A721004275A9 /* Project object */;
+}
