@@ -13,6 +13,8 @@
 		BE300BCA1D83A721004275A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE300BC91D83A721004275A9 /* Assets.xcassets */; };
 		BE300BCD1D83A721004275A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE300BCB1D83A721004275A9 /* Main.storyboard */; };
 		BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */; };
+		BE300BDA1D83CDDD004275A9 /* BWJDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */; };
+		BE300BE11D83D945004275A9 /* MCSession+SessionIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		BE300BCE1D83A722004275A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE300BD41D83A8C0004275A9 /* BWJMultipeerConnectivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJMultipeerConnectivityController.h; sourceTree = "<group>"; };
 		BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJMultipeerConnectivityController.m; sourceTree = "<group>"; };
+		BE300BD81D83CDDD004275A9 /* BWJDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWJDownloadRequest.h; sourceTree = "<group>"; };
+		BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWJDownloadRequest.m; sourceTree = "<group>"; };
+		BE300BDF1D83D945004275A9 /* MCSession+SessionIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCSession+SessionIdentifier.h"; sourceTree = "<group>"; };
+		BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCSession+SessionIdentifier.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		BE300BBF1D83A721004275A9 /* BandwithJacker-mac */ = {
 			isa = PBXGroup;
 			children = (
+				BE300BDB1D83CDE1004275A9 /* Objects */,
 				BE300BC01D83A721004275A9 /* AppDelegate.h */,
 				BE300BC11D83A721004275A9 /* AppDelegate.m */,
 				BE300BC61D83A721004275A9 /* ViewController.h */,
@@ -87,6 +94,17 @@
 				BE300BD51D83A8C0004275A9 /* BWJMultipeerConnectivityController.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		BE300BDB1D83CDE1004275A9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				BE300BDF1D83D945004275A9 /* MCSession+SessionIdentifier.h */,
+				BE300BE01D83D945004275A9 /* MCSession+SessionIdentifier.m */,
+				BE300BD81D83CDDD004275A9 /* BWJDownloadRequest.h */,
+				BE300BD91D83CDDD004275A9 /* BWJDownloadRequest.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE300BE11D83D945004275A9 /* MCSession+SessionIdentifier.m in Sources */,
 				BE300BD61D83A8C0004275A9 /* BWJMultipeerConnectivityController.m in Sources */,
 				BE300BC81D83A721004275A9 /* ViewController.m in Sources */,
 				BE300BC51D83A721004275A9 /* main.m in Sources */,
+				BE300BDA1D83CDDD004275A9 /* BWJDownloadRequest.m in Sources */,
 				BE300BC21D83A721004275A9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

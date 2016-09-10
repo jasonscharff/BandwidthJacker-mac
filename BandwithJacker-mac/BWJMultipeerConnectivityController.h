@@ -10,11 +10,14 @@
 
 @import AppKit;
 
-@class MCBrowserViewController;
+@class BWJDownloadRequest, MCBrowserViewController;
 
 @interface BWJMultipeerConnectivityController : NSObject
 
 + (instancetype)sharedMultipeerConnectivityController;
 - (NSViewController *)browserViewController;
+
+- (void)addDownloadRequestOperation : (BWJDownloadRequest *)download;
+
 
 @end
